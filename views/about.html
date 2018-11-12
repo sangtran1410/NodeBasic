@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>About Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+ 
+<body>
+<h1>About! - GET METHOD</h1>
+ 
+<footer>
+<p>
+    <a href="/home">Home</a> | <a href="/about">About Me</a> | <a href="/article">Some Article</a> | <a href="/contact">Contact</a>
+    <div class="data"></div>
+</p>
+</footer>
+ 
+<script>
+const obj = { name: 'sang', age: 25 };
+const getAPI = () => {
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+	 		console.log(this.responseText);
+	 		document.getElementsByClassName('data')[0].innerHTML = `Data response: ${this.responseText}`;
+		}
+	};
+
+	xhttp.open("GET", "/api?id=8", true);
+	xhttp.send();
+}
+getAPI();
+
+</script>
+
+</body>
+</html>

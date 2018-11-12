@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Contact Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+ 
+<body>
+	<h1>Contact! - DELETE METHOD</h1>
+	 
+	<footer>
+	<p>
+	    <a href="/home">Home</a> | <a href="/about">About Me</a> | <a href="/article">Some Article</a> | <a href="/contact">Contact</a>
+	    <div class="data"></div>
+	</p>
+	</footer>
+	 
+	<script>
+	var id = 5;
+	$.ajax({
+	    url: '/api',
+	    type: 'DELETE',
+	    data: {
+		  id: id
+		},
+	    success: function(result) {
+	        // Do something with the result
+	        console.log(result)
+	    }
+	});
+	</script>
+
+</body>
+</html>
